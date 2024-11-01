@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
+import { Grid } from '@mui/material';
+import { ToastContainer } from 'react-toastify';
+import { TaskProvider } from './components/TaskContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <>
+    <TaskProvider>
+    <ToastContainer/>
+      <Grid>
+        <Grid>
+          <TaskForm />
+        </Grid>
+
+        <Grid>
+          <TaskList />
+        </Grid>
+      </Grid>
+      </TaskProvider>
+    </>
   );
 }
 
