@@ -11,15 +11,21 @@ const axiosInstance = axios.create({
 });
 
 // Fetch all tasks
-export const fetchAllTasks = async () => {
-  const response = await axiosInstance.get('/tasks/getAll');
+export const fetchAllTasks = async (page = 1, limit = 10) => {
+  const response = await axiosInstance.get('/tasks/getAll',{
+    params: { page, limit },
+  });
   return response.data;
 };
 
 // Fetch tasks based on completion status
-export const fetchFilteredTasks = async (completed) => {
+export const fetchFilteredTasks = async (completed, page=1, limit=10) => {
   const response = await axiosInstance.get('/tasks/filter', {
-    params: { completed },
+    params: { 
+      completed,
+      page,
+      limit 
+    },
   });
   return response.data;
 };
