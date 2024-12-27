@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import { Box, Grid } from '@mui/material';
+import Contactus from './Heading';
+import Heading from './Heading';
 
 const Layout = () => {
 
@@ -25,6 +27,10 @@ const Layout = () => {
           </Grid>
           <Grid item xs={12}>
             <TaskList openEditForm={openEditForm} />
+           
+          </Grid>
+          <Grid item xs={12}>
+           <Heading/>
           </Grid>
         </Grid>
       </Box>
